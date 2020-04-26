@@ -1,0 +1,25 @@
+{
+    "authors": [
+        {
+            "name": "Nemial",
+            "email": "nemtre@protonmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/CLI.php",
+            "src/Engine.php"
+        ]
+    },
+    "bin": [
+        "bin/usc"
+    ],
+    "description": "The rate calculator on utility bills",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "name": "nemial/usc",
+    "require": {
+        "wp-cli/php-cli-tools": "v0.11.11"
+    }
+}
