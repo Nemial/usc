@@ -11,16 +11,17 @@ const TITLE = [
     'electric' => 'ЭЛЕКТРИЧЕСТВО',
     'drainage' => 'ВОДООТВЕДЕНИЕ',
     "garbage" => 'МУСОР',
+    "hsm" => "СОДЕРЖАНИЕ ЖФ"
 ];
 const NAMES = ['gas', 'electric', 'water', 'drainage'];
 const GARBAGE_COST = 81.43;
+const HSM = 672.43;
 
 function engine()
 {
-    $currentNames = NAMES;
     $resultCost = [];
 
-    foreach ($currentNames as $name) {
+    foreach (NAMES as $name) {
         $title = TITLE[$name];
         $coff = COEFFICIENTS[$name];
 
@@ -30,8 +31,9 @@ function engine()
         line();
         $resultCost[$name] = round(($actualValue - $oldValue) * $coff, 2);
     }
-    //    Добавление мусора
+    //    Добавление постоянных величин
     $resultCost['garbage'] = GARBAGE_COST;
+    $resultCost['hsm'] = HSM;
 
     $allCost = array_sum($resultCost);
 
